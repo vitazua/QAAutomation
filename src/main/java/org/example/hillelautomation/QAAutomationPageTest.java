@@ -1,5 +1,6 @@
 package org.example.hillelautomation;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -34,7 +35,11 @@ public class QAAutomationPageTest {
         String courseRate = qaAutomationPage.getCourseRate();
         Assert.assertEquals(courseRate, "4.9");
     }
-
+    @Test
+    public void testClickLogoAndVerifyTitle() {
+        ButtonWrapper logoButton = new ButtonWrapper(driver, By.className("site-logo-link"));
+        logoButton.clickAndVerifyTitle();
+    }
     @AfterTest
     public void tearDown() {
         driver.quit();
