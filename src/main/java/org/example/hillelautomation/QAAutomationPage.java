@@ -11,6 +11,9 @@ public class QAAutomationPage {
     @FindBy(className = "course-descriptor_header-text")
     private WebElement courseDescriptorHeader;
 
+    @FindBy(className = "site-logo-link")
+    private WebElement siteLogo;
+
     @FindBy(tagName = "strong")
     private WebElement courseTitle;
 
